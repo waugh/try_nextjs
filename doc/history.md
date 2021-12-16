@@ -76,5 +76,45 @@ npm run dev # as instructed by the tutorial from nextjs.org
 ```
 Server seems to work fine. So now I need the legit way to include
 Typescript.
+```
+npm install --save-dev typescript @types/react
+```
+I get
+```
+npm WARN @babel/plugin-syntax-jsx@7.14.5 requires a peer of @babel/core@^7.0.0-0 but none is installed. You must install peer dependencies yourself.
+```
+Based on [this explanation](https://flaviocopes.com/npm-peer-dependencies/)
+of what is meant by "peer dependency", it looks as though I need to install
+@babel/core (otherwise, it says, " . . . the code will likely fail at 
+runtime").
+```
+npm install @babel/core
+```
+It got 7.16.5, which would seem to meet the requirement.
 
+Did anything break? No.
+
+Try some Typescript. A mere name change from something.js to something.tsx
+flies. Now try intruducing a type error and see whether we hear about it.
+
+That did not work. Maybe if I keep reading the tutorial and docs at nextjs,
+an instruction will turn up for getting typechecks. It isn't just happening
+automagically in the development-server console when one changes the code and
+tries to reload the page in the browser.
+
+The docs at nextjs reveal that a command is available
+```
+npx next lint
+```
+Trying it the first time makes it want to install `eslint`.
+Then the messages from letting it install via `npm` indicate that `eslint`
+is incompatible with the version of Node I have. So trying changing to a
+version that it likes.
+
+Looks as though I had somehow dropped `.tool-versions` as I moved the code
+from Bitbucket to Github. So, I had not been exercising the control I had
+itended on the version of Node.
+
+The "lint" run does not catch the type error. Maybe it's not intended to.
+Need to put questions to generous colleagues who are ahead of me in learning.
 
