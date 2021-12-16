@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+console.log(({}).nosel);
+
 export default function FirstPost() {
   return (
     <>
