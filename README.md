@@ -1,3 +1,28 @@
+# try_nextjs
+
+Try seeding a web-server project based on nextjs.org.
+
+## Reminder
+
+When cloning, remember (modify as appropriate):
+```
+git config user.email m2hh2kmhsn@snkmail.com
+git config user.name "Jack WAUGH"
+npm install
+```
+To start the "development"-mode server:
+```
+npm run dev
+```
+
+## More Info
+
+* [doc/genesis.md](https://github.com/waugh/try_nextjs/blob/master/doc/genesis.md) -- how this project was (re)started from scratch.
+
+
+
+# Original README left by `create-next-app`
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
