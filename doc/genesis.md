@@ -158,4 +158,53 @@ ls -la ../save
 There are two files and their lengths are zero.
 ```
 rm -rf ../save
+git status
+On branch wjw_003
+Your branch is up to date with 'origin/wjw_003'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   .gitignore
+	modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.tool-versions
+	LICENSE
+	doc/
+git add --all
+git commit -m "Restore .gitignore, .tool-versions, LICENSE, and dox."
+git push
+   adc8cd5..e7c5fbb  wjw_003 -> wjw_003
 ```
+The server works and some of the source is in Typescript.
+However, introducing a type error does not result in a diagnostic
+when the server recompiles.
+Following
+[this advice](https://www.reddit.com/r/typescript/comments/rhwsq6/nextjs_check_for_type_errors/hotfhz6/),
+which says to follow
+[this other advice](https://nextjs.org/docs/basic-features/eslint).
+
+Found that types can be checked with `tsc`, but neither `lint` nor the
+server alerts me to my error of static typing.
+
+Trying
+[these]()
+instructions.
+```
+npm install --save-dev typescript @typescript-eslint/parser
+npm install --save-dev @typescript-eslint/eslint-plugin
+```
+Editing `.eslintrc.json` per the instructions.
+
+It still doesn't catch my type-related error in `npm run lint`.
+
+Moving on. At least, I know I can run `tsc` with the appropriate args to
+check types.
+```
+npx tsc --noEmit
+```
+
