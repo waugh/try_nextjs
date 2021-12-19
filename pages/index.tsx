@@ -1,10 +1,9 @@
 import type {NextPage} from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 
-console.log(({}).nosel);
+/* console.log(({}).nosel); */
 
 const Home: NextPage = () => {
   return (
@@ -22,7 +21,7 @@ const Home: NextPage = () => {
           Some paragraph.
         </p>
         <p>
-          Let's <Link href="drill"><a>link</a></Link> to a drill page.
+          Let&apos;s <Link href="drill"><a>link</a></Link> to a drill page.
         </p>
       </main>
 

@@ -192,7 +192,7 @@ Found that types can be checked with `tsc`, but neither `lint` nor the
 server alerts me to my error of static typing.
 
 Trying
-[these]()
+[these](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
 instructions.
 ```
 npm install --save-dev typescript @typescript-eslint/parser
@@ -200,11 +200,22 @@ npm install --save-dev @typescript-eslint/eslint-plugin
 ```
 Editing `.eslintrc.json` per the instructions.
 
-It still doesn't catch my type-related error in `npm run lint`.
+It still doesn't catch my type-related error in `npm run lint`,
+nor in the "development" server when it recompiles changed files.
 
-Moving on. At least, I know I can run `tsc` with the appropriate args to
-check types.
+Moving on. At least, I know I can have the types checked by
+running `tsc` with the appropriate args.
 ```
 npx tsc --noEmit
 ```
+Setting up deployment per the "Node.js Server" section of
+[https://nextjs.org/docs/deployment](https://nextjs.org/docs/deployment).
+```
+npm run build
+```
+Ha! The `build` **does** find my type error.
+```
+npm run start
+```
+The styles are all wrong.
 
